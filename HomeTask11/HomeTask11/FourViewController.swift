@@ -12,11 +12,19 @@ import UIKit
 class FourViewController: UIViewController {
 
     @IBOutlet weak var menu: UIButton!
-    
+    @IBAction func buttonUIMenu (_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
+        let action1 = UIAction (title : "Настройки") {_ in}
+        let action2 = UIAction (title : "Заметки") {_ in}
+        let menuUI = UIMenu(title: "Меню", children: [action1 , action2])
+        let barItemRight = UIBarButtonItem.init(title: "UIМеню", image: nil, target: self, action: #selector (buttonUIMenu), menu: menuUI)
+        navigationItem.rightBarButtonItem = barItemRight
+        
+        
         setupGest ()
         view.backgroundColor = .white
        
@@ -41,13 +49,20 @@ class FourViewController: UIViewController {
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
         self.present(popVC, animated: true)
     }
-   
+    
 
 }
+
+
+
 
 extension FourViewController : UIPopoverPresentationControllerDelegate {
-    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+        
     }
-}
+    
+   
+   
+    }
+
