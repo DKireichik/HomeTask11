@@ -10,19 +10,29 @@ import UIKit
 
 
 class FourViewController: UIViewController {
-
+  
     @IBOutlet weak var menu: UIButton!
-    @IBAction func buttonUIMenu (_ sender: UIButton) {
-    }
+   
+    let buttonUIMenu = {
+        let buttonUIMenu = UIButton(type: .system)
+        buttonUIMenu.setTitle("UIМеню", for: .normal)
+        return buttonUIMenu
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
         let action1 = UIAction (title : "Настройки") {_ in}
         let action2 = UIAction (title : "Заметки") {_ in}
-        let menuUI = UIMenu(title: "Меню", children: [action1 , action2])
-        let barItemRight = UIBarButtonItem.init(title: "UIМеню", image: nil, target: self, action: #selector (buttonUIMenu), menu: menuUI)
-        navigationItem.rightBarButtonItem = barItemRight
+      
+        view.addSubview(buttonUIMenu)
+        buttonUIMenu.translatesAutoresizingMaskIntoConstraints = false
+        buttonUIMenu.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonUIMenu.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        buttonUIMenu.addTarget(self, action: #selector(buttonMenu), for: .touchUpInside)
+        buttonUIMenu.menu = UIMenu(title: "Меню", children: [action1 , action2])
+        buttonUIMenu.showsMenuAsPrimaryAction = true
+        
+        
         
         
         setupGest ()
@@ -61,7 +71,9 @@ extension FourViewController : UIPopoverPresentationControllerDelegate {
         return .none
         
     }
-    
+    @IBAction func buttonMenu (_ sender: UIButton) {
+        
+    }
    
    
     }

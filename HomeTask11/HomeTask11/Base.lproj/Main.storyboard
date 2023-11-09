@@ -85,8 +85,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-Bi-fT1">
-                                <rect key="frame" x="163" y="408.66666666666669" width="67" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjj-Bi-fT1">
+                                <rect key="frame" x="72" y="166" width="67" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Menu"/>
                                 <connections>
@@ -97,7 +98,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8o-Tw-LRP">
-                                <rect key="frame" x="208" y="166" width="60" height="35"/>
+                                <rect key="frame" x="317" y="94" width="60" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Next"/>
@@ -108,10 +109,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nsf-WB-OKv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="kjj-Bi-fT1" firstAttribute="centerY" secondItem="aEO-W0-Nsl" secondAttribute="centerY" id="6kN-U9-Ae3"/>
-                            <constraint firstItem="kjj-Bi-fT1" firstAttribute="centerX" secondItem="aEO-W0-Nsl" secondAttribute="centerX" id="WdG-iK-cBa"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vl2-JG-9Df"/>
                     <connections>
